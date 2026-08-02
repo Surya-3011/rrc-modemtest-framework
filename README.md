@@ -1,6 +1,6 @@
 # Mini RRC Protocol Test Automation Framework
 
-![tests](https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/actions/workflows/tests.yml/badge.svg)
+![tests](https://github.com/Surya-3011/rrc-modemtest-framework/actions/workflows/tests.yml/badge.svg)
 
 ### Built for: Qualcomm — Modem System Test (MST) Engineer, On-Campus
 
