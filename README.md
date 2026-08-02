@@ -1,7 +1,5 @@
 # RRC Protocol Test Automation Framework
 
-![tests](https://github.com/Surya-3011/rrc-modemtest-framework/actions/workflows/tests.yml/badge.svg)
-
 A lightweight test automation framework built around a simulated RRC
 (Radio Resource Control) connection state machine — the kind of state
 machine a cellular modem runs to manage its connection to a network
