@@ -1,0 +1,64 @@
+[
+  {
+    "name": "TC01_Idle_to_Connected_normal_setup",
+    "sim_id": "UE-1",
+    "events": ["SETUP_REQUEST", "SETUP_COMPLETE"],
+    "expected_final_state": "RRC_CONNECTED"
+  },
+  {
+    "name": "TC02_Connected_release_to_Idle",
+    "sim_id": "UE-1",
+    "events": ["SETUP_REQUEST", "SETUP_COMPLETE", "RELEASE"],
+    "expected_final_state": "RRC_IDLE"
+  },
+  {
+    "name": "TC03_Connected_suspend_to_Inactive",
+    "sim_id": "UE-1",
+    "events": ["SETUP_REQUEST", "SETUP_COMPLETE", "RELEASE_SUSPEND"],
+    "expected_final_state": "RRC_INACTIVE"
+  },
+  {
+    "name": "TC04_Inactive_resume_to_Connected",
+    "sim_id": "UE-1",
+    "events": ["SETUP_REQUEST", "SETUP_COMPLETE", "RELEASE_SUSPEND", "RESUME_REQUEST", "RESUME"],
+    "expected_final_state": "RRC_CONNECTED"
+  },
+  {
+    "name": "TC05_Radio_link_failure_forces_Idle",
+    "sim_id": "UE-1",
+    "events": ["SETUP_REQUEST", "SETUP_COMPLETE", "RADIO_LINK_FAILURE"],
+    "expected_final_state": "RRC_IDLE"
+  },
+  {
+    "name": "TC06_Paging_wakes_idle_UE",
+    "sim_id": "UE-1",
+    "events": ["PAGING", "SETUP_COMPLETE"],
+    "expected_final_state": "RRC_CONNECTED"
+  },
+  {
+    "name": "TC07_Reconfiguration_while_connected",
+    "sim_id": "UE-1",
+    "events": ["SETUP_REQUEST", "SETUP_COMPLETE", "RECONFIGURATION", "RECONFIGURATION"],
+    "expected_final_state": "RRC_CONNECTED"
+  },
+  {
+    "name": "TC08_FAULT_out_of_sequence_setup_complete",
+    "sim_id": "UE-2",
+    "events": ["SETUP_COMPLETE"],
+    "expected_final_state": "RRC_IDLE",
+    "expect_rejection": true
+  },
+  {
+    "name": "TC09_FAULT_release_while_idle",
+    "sim_id": "UE-2",
+    "events": ["RELEASE"],
+    "expected_final_state": "RRC_IDLE",
+    "expect_rejection": true
+  },
+  {
+    "name": "TC10_MultiSIM_independent_states",
+    "sim_id": "UE-2",
+    "events": ["SETUP_REQUEST", "SETUP_COMPLETE", "RELEASE_SUSPEND"],
+    "expected_final_state": "RRC_INACTIVE"
+  }
+]
